@@ -8,4 +8,15 @@
      <property name="name" value="Spring"></property>
   </bean>
   
+  <bean name="address" class="setter.Address">
+    <constructor-arg name="city" value="lz"></constructor-arg>
+    <constructor-arg name="country" value="CN"></constructor-arg>
+  </bean>
+  
+  <bean name="employee" class="setter.Employee">
+    <property name="firstName" value="little"></property>
+    <property name="lastName" value="motor"></property>
+    <property name="add" ref="address"></property>
+  </bean>
+  
 </beans>
