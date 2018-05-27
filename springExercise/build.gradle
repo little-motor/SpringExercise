@@ -2,9 +2,12 @@ apply plugin: 'java'
 
 
 dependencies {
-    compile 'org.springframework:spring-context:5.0.6.RELEASE'
+  compile 'org.springframework:spring-context:5.0.6.RELEASE'
+  // https://mvnrepository.com/artifact/org.springframework/spring-webmvc
+  compile group: 'org.springframework', name: 'spring-webmvc', version: '5.0.6.RELEASE'
 }
 
 repositories {
     mavenCentral()
 }
+s
