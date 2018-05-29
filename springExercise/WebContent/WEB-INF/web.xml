@@ -8,6 +8,11 @@ http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd">
 <servlet>
 	<servlet-name>springmvc</servlet-name>
 	<servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
+	<init-param>
+	  <!-- 自带的一个参数名，用于导入初始配置文件路径 -->
+	  <param-name>contextConfigLocation</param-name>
+	  <param-value>/WEB-INF/config/springmvc-config.xml</param-value>
+	</init-param>
 	<load-on-startup>1</load-on-startup>
 </servlet>
 <servlet-mapping>
