@@ -10,17 +10,16 @@
     http://www.springframework.org/schema/mvc
     http://www.springframework.org/schema/mvc/spring-mvc.xsd
     http://www.springframework.org/schema/context
-    http://www.springframework.org/schema/context/
-    spring-context.xsd">
+    http://www.springframework.org/schema/context/spring-context.xsd">
     <!-- controller组件位置 -->
     <context:component-scan base-package="spring.controller"></context:component-scan>   
     <mvc:annotation-driven></mvc:annotation-driven>
     <mvc:resources location="/css/" mapping="/css/*"></mvc:resources>
     <mvc:resources location="/" mapping="/*.html"></mvc:resources>
     
-    <bean id="viewResolver" class="org.springframework.web
-    .servlet.view.InternalResourceViewResolver">
-      <property name="profix" value="/WEB-INF/jsp/"></property>  
+    <bean id="viewResolver" 
+    class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+      <property name="prefix" value="/WEB-INF/jsp/"></property>  
       <property name="suffix" value=".jsp"></property>
     </bean>
    
