@@ -8,4 +8,5 @@ import soundsystem.SoundPackageConfig;
 //类型安全
 @ComponentScan(basePackageClasses = {SoundPackageConfig.class})
 public class CDPlayerConfig { 
+  
 }
