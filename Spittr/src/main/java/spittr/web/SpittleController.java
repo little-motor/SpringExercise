@@ -27,13 +27,15 @@ public class SpittleController {
     this.spittleRepository = spittleRepository;
   }
 
+  //带参数的查询
   @RequestMapping(method=RequestMethod.GET)
   public List<Spittle> spittles(
       @RequestParam(value="max", defaultValue=MAX_LONG_AS_STRING) long max,
       @RequestParam(value="count", defaultValue="20") int count) {
     return spittleRepository.findSpittles(max, count);
   }
-
+  
+  //占位符值赋值给spittleId参数
   @RequestMapping(value="/{spittleId}", method=RequestMethod.GET)
   public String spittle(
       @PathVariable("spittleId") long spittleId, 

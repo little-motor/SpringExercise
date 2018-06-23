@@ -13,6 +13,7 @@ import org.springframework.web.servlet.view.InternalResourceViewResolver;
 @Configuration
 @EnableWebMvc
 @ComponentScan("spittr.web")
+//适配器
 public class WebConfig extends WebMvcConfigurerAdapter {
 
   @Bean

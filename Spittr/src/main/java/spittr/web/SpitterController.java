@@ -1,5 +1,5 @@
 package spittr.web;
-
+//处理用户信息
 import static org.springframework.web.bind.annotation.RequestMethod.*;
 
 import javax.validation.Valid;
@@ -25,23 +25,27 @@ public class SpitterController {
     this.spitterRepository = spitterRepository;
   }
   
+  //处理GET请求
   @RequestMapping(value="/register", method=GET)
   public String showRegistrationForm() {
     return "registerForm";
   }
   
+  //处理POST请求
   @RequestMapping(value="/register", method=POST)
   public String processRegistration(
+      //验证信息
       @Valid Spitter spitter, 
       Errors errors) {
     if (errors.hasErrors()) {
       return "registerForm";
     }
-    
+    //提交信息后重定向显示用户信息，防止刷新重复提交
     spitterRepository.save(spitter);
     return "redirect:/spitter/" + spitter.getUsername();
   }
   
+  //占位符
   @RequestMapping(value="/{username}", method=GET)
   public String showSpitterProfile(@PathVariable String username, Model model) {
     Spitter spitter = spitterRepository.findByUsername(username);
