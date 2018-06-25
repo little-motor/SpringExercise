@@ -1,21 +1,25 @@
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ taglib uri="http://www.springframework.org/tags/form" prefix="springform" %>
+<%@ page language="java" import="java.util.*" pageEncoding="UTF-8"%> 
 <%@ page session="false" %>
 <html>
   <head>
     <title>Spitter</title>
-    <link rel="stylesheet" type="text/css" 
-          href="<c:url value="/resources/style.css" />" >
   </head>
   <body>
     <h1>Register</h1>
 
-    <form method="POST">
-      First Name: <input type="text" name="firstName" /><br/>
-      Last Name: <input type="text" name="lastName" /><br/>
-      Email: <input type="email" name="email" /><br/>
-      Username: <input type="text" name="username" /><br/>
-      Password: <input type="password" name="password" /><br/>
+    <springform:form method="POST" commandName="spitter">
+      First Name: <springform:input path="firstName" /><br/>
+        <springform:errors path="firstName"></springform:errors><br>
+      Last Name: <springform:input path="lastName" /><br/>
+        <springform:errors path="lastName"></springform:errors><br>
+      Email: <springform:input path="email" /><br/>
+        <springform:errors path="email"></springform:errors><br>
+      Username: <springform:input path="username" /><br/>
+        <springform:errors path="username"></springform:errors><br>
+      Password: <springform:password path="password" /><br/>
+        <springform:errors path="password"></springform:errors><br>
       <input type="submit" value="Register" />
-    </form>
+    </springform:form>
   </body>
 </html>

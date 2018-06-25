@@ -27,7 +27,9 @@ public class SpitterController {
   
   //处理GET请求
   @RequestMapping(value="/register", method=GET)
-  public String showRegistrationForm() {
+  //在model中加入key为spitter的Spitter对象
+  public String showRegistrationForm(Model model) {
+    model.addAttribute("spitter",new Spitter());
     return "registerForm";
   }
   
@@ -42,6 +44,7 @@ public class SpitterController {
     }
     //提交信息后重定向显示用户信息，防止刷新重复提交
     spitterRepository.save(spitter);
+    //Resolver识别redirect：为重定向，forward：为前往指定url
     return "redirect:/spitter/" + spitter.getUsername();
   }
   
